@@ -8,10 +8,19 @@ public class Main {
         System.out.print("Enter number:");
         Integer n = scanner.nextInt();
 
-        for (int i = 0; i < n; i++) {
-            outputLineEmpty(n - 1 - i);
-            outputLineStar(2*i + 1);
+        for (int i = 0; i < 2 * n - 1; i++) {
 
+            if(i<n){
+                outputLineEmpty(n - 1 - i);
+                outputLineStar(2 * i + 1);
+            }
+
+
+            if(i>=n){
+
+                outputLineEmpty(i-(n-1));
+                outputLineStar(2*n-1-2*(i-n+1));
+            }
             System.out.println();
         }
 
