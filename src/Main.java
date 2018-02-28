@@ -1,23 +1,32 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        FizzBuzz();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number:");
+        Integer n = scanner.nextInt();
+
+        List<Integer> factors = primeFactors(n);
+
+        System.out.print(Arrays.asList(factors));
+
     }
 
-    private static void FizzBuzz() {
-        for (int i = 1; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzz");
-            } else if (i % 3 == 0) {
-                System.out.println("Fizz");
-            } else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
+    private static List<Integer> primeFactors(int n) {
+        List<Integer> factors = new ArrayList<>();
+        for (int i = 1; i <n; i++) {
+            if (n % i == 0) {
+                factors.add(i);
             }
         }
+        return factors ;
     }
+
 
 }
 
