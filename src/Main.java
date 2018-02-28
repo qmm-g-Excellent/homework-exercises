@@ -1,6 +1,16 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("*");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number:");
+        Integer n = scanner.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("*");
+        }
+
     }
 }
